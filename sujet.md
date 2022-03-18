@@ -32,9 +32,9 @@ We have chosen the bug : [COLLECTIONS-796](https://issues.apache.org/jira/projec
 
 SetUniqueList.createSetBasedOnList doesn't add list elements to return value
 
-This bug occured after a new released version. A call to a function (called addAll) was accidentally deleted. 
+This bug occured after a new released version. A call to a function (called addAll) was accidentally deleted by an humain error. 
 
-To resolve this problem, the contributor created a [pull request](https://github.com/apache/commons-collections/pull/255) with tests.
+To resolve this problem, the contributor created a [pull request](https://github.com/apache/commons-collections/pull/255) where he corrects the bug and adds a test to avoid that the bug reappers in the future.
 
 ### Question 3
 
