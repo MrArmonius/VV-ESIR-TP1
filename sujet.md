@@ -1,3 +1,5 @@
+# PR - Thomas BAUQUIN & Erwan DUFOUR
+
 # Practical Session #1: Introduction
 
 1. Find in news sources a general public article reporting the discovery of a software bug. Describe the bug. If possible, say whether the bug is local or global and describe the failure that manifested its presence. Explain the repercussions of the bug for clients/consumers and the company or entity behind the faulty program. Speculate whether, in your opinion, testing the right scenario would have helped to discover the fault.
@@ -62,3 +64,5 @@ Having a formal specification for the WebAssembly, “not only demonstrates the 
 ### Question 5
 
 According to the authors, the main advantages of the mechanism Isabelle are to have a verifiable executable and a type checker. Moreover, their model is more resilient, they have fully proven the mechanism.
+
+# PR - Thomas BAUQUIN & Erwan DUFOUR
