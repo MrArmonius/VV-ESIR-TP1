@@ -65,4 +65,13 @@ Having a formal specification for the WebAssembly, “not only demonstrates the 
 
 According to the authors, the main advantages of the mechanism Isabelle are to have a verifiable executable and a type checker. Moreover, their model is more resilient, they have fully proven the mechanism.
 
+The mechanism helps to improve the mechanism because the authors of this article have exposed several issues about the official WebAssembly specification.
+
+We have a separate verified executable interpreter and type checker as news artefacts.
+
+The author verified the specification through a semantic behaviour in English prose and with an accompanying natural deduction style formal rule. The designers of WebAssembly created their model with the goal to be capable of being proven through formal analysis and verification.
+
+This new specification needs to be tested. The core proof of correctness and the official WebAssembly conformance test suite allow to experimentally validate the mechanised specification.
+
+
 # PR - Thomas BAUQUIN & Erwan DUFOUR
