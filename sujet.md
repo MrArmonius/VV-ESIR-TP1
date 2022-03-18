@@ -11,3 +11,54 @@
 5.  Shortly after the appearance of WebAssembly another paper proposed a mechanized specification of the language using Isabelle. The paper can be consulted here: https://www.cl.cam.ac.uk/~caw77/papers/mechanising-and-verifying-the-webassembly-specification.pdf. This mechanized specification complements the first formalization attempt from the paper. According to the author of this second paper, what are the main advantages of the mechanized specification? Did it help improving the original formal specification of the language? What other artifacts were derived from this mechanized specification? How did the author verify the specification? Does this new specification removes the need for testing?
 
 ## Answers
+
+### Question 1
+
+We have chosen the bug : [CURA-8365](https://github.com/Ultimaker/CuraEngine/pull/1474)
+
+The unretract was placed before the move, which can cause dimensional accuracy issues and leave visual artefacts since the nozzle is sitting on top of the outer wall on the printing.
+
+Instead, the printer should unretract before the last travel move when going to print an outer wall. After the unretraction is complete, it can apply the last travel move and start printing the outer wall.
+
+There is no repercussions on the company behind this bug because that’s not a fatal bug. Moreover, this is an OpenSource project where everyone can be a contributor. The bug was found and solved by the community. The bug is just a minor local bug which decreases the quality of the printing. The error is due to some human error while they wrote the code.
+
+To discover this problem we should manually create an oracle and compare it with the output of cura’s engine. That’s the only solution to be sure about our output.
+
+### Question 2
+
+We have chosen the bug : [COLLECTIONS-796](https://issues.apache.org/jira/projects/COLLECTIONS/issues/COLLECTIONS-796?filter=doneissues) 
+
+SetUniqueList.createSetBasedOnList doesn't add list elements to return value
+
+This bug occured after a new released version. A call to a function (called addAll) was accidentally deleted. 
+
+To resolve this problem, the contributor created a [pull request](https://github.com/apache/commons-collections/pull/255) with tests.
+
+### Question 3
+
+This paper presents experiments in chaos engineering, used to make systems safe again.
+
+Netflix wants a resilient system to have a service that works 24/7. To test this resilience, they are experimenting with shutting down the servers of an entire region of AWS. After the servers are shut down, they test whether subscribers in the region where AWS was shut down can access Netflix and watch their movies. To do this, they developed their service on a distributed system.
+
+The variables that the developer team observes are “are users complaining ?” and “does everything seem to be working correctly ?”.
+
+Netflix was the first company to develop the use of chaos engineering. They have also created a software: Chaos Monkey. Through this article, they aim to extend its use to as many companies as possible. 
+
+### Question 4
+
+WebAssembly has several advantages : 
+- safe to execute
+- fast to execute
+- language and platform independent
+- deterministic 
+- simple interoperability with the Web platform
+- compact and easy to decode
+- easy to validate and compile
+- easy to generate for producers
+- streamable and parallelizable
+
+Having a formal specification for the WebAssembly, “not only demonstrates the “real world” feasibility of such an approach, but also leads to a notably clean design".
+
+### Question 5
+
+According to the authors, the main advantages of the mechanism Isabelle are to have a verifiable executable and a type checker. Moreover, their model is more resilient, they have fully proven the mechanism.
